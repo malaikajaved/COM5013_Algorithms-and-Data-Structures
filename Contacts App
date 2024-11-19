@@ -1,1 +1,6 @@
-
+class contact
+def__init__(self, name, phone, emila)
+self.name 
+self.phone
+self.email
+def
