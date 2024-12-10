@@ -1,18 +1,19 @@
-class Node: #node class for linked list, used inHashmap collions.
-    def__init__(self, contact= None):
-      self.contact= contcat #we are going to store the contact info
-      self.next = None # points to the next node
-#linkedlist class is to handle collisions in hashmap
-class LinkedList:
-   def__init__(self):
-      self.head = None
-# now retirve contact by name
-def get (self,name):
-   current = self.head
-   while current:
-    if current.contact.name == name:
-      return current.contcat
-  current = current.next
-return None
+from flask import Flask, render_template, request  # Import necessary modules from Flask
 
+# Node class for managing linked list nodes
+class Node:
+    def __init__(self, value, next_node=None):
+        """
+        Initialize a Node with a value and an optional reference to the next node.
+        """
+        self.value = value  # Store the value of the node
+        self.next_node = next_node  # Reference to the next no
+        def get_value(self):
+        return self.value  # Return the value of the node
+
+    def get_next_node(self):
+        return self.next_node  # Return the reference to the next node
+
+    def set_next_node(self, next_node):
+        self.next_node = next_node  # Set the reference to the next node
 
