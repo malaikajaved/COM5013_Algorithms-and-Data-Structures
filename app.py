@@ -39,3 +39,16 @@ class LinkedList:
         while current.get_next_node() is not None  # Traverse to the end of the list
             current = current.get_next_node()
         current.set_next_node(Node(new_value))  # Append the new value as a new node
+    def search(self, key):
+        """
+        Search for a key in the linked list and return the associated value.
+        """
+        current_node = self.head_node
+        while current_node:
+            if current_node.get_value()[0] == key:  # Check if the key matches
+                return current_node.get_value()[1]  # Return the associated value
+            current_node = current_node.get_next_node()
+        return None  # Return None if the key is not found
+        
+
+        
