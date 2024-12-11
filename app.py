@@ -23,3 +23,19 @@ class LinkedList:
         """
         Initialize a LinkedList with an optional head node value.
         """
+        self.head_node = Node(value) if value else None  # Create the head node of the linked list
+
+    def get_head_node(self):
+        return self.head_node  # Return the head node of the linked list
+
+    def append(self, new_value):
+        """
+        Append a new value to the end of the linked list.
+        """
+        if not self.head_node:  # If the list is empty
+            self.head_node = Node(new_value)  # Set the head node's value to the new value
+            return
+        current = self.head_node  # Start from the head node
+        while current.get_next_node() is not None  # Traverse to the end of the list
+            current = current.get_next_node()
+        current.set_next_node(Node(new_value))  # Append the new value as a new node
