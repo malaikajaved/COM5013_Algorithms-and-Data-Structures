@@ -15,5 +15,11 @@ class Node:
         return self.next_node  # Return the reference to the next node
 
     def set_next_node(self, next_node):
-        self.next_node = next_node  # Set the reference to the next node
+        self.next_node = next_node  # now set the reference to the next node
 
+# this is a LinkedList class for handling contacts
+class LinkedList:
+    def __init__(self, value=None):
+        """
+        Initialize a LinkedList with an optional head node value.
+        """
