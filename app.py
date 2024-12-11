@@ -50,5 +50,17 @@ class LinkedList:
             current_node = current_node.get_next_node()
         return None  # Return None if the key is not found
         
+   def stringify_list(self):
+        """
+        Return a string representation of all contacts in the linked list.
+        """
+        if not self.head_node:
+            return "Empty"
+        string_list = ""
+        current_node = self.head_node
+        while current_node:
+            string_list += str(current_node.get_value()) + " -> "
+            current_node = current_node.get_next_node()
+        return string_list.strip(" -> ")  # Remove the trailing arrow
 
         
