@@ -78,6 +78,15 @@ def hash_function(self, key):
         """
         return sum(ord(char) for char in key) % self.array_size  # Return the hash index
 
-    
+def assign(self, key, value):
+        """
+        Assign a key-value pair to the hash map, handling collisions using a linked list.
+        """
+        index = self.hash_function(key)  # Get the index for the key using the hash function
+        if self.array[index] is None:  # If there is no collision at this index
+            self.array[index] = LinkedList((key, value))  # Create a new linked list for this key-value pair
+        else:
+            self.array[index].append((key, value))  # Append the key-value pair to the existing linked list
+
 
 
