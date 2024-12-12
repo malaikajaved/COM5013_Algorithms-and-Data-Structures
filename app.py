@@ -60,7 +60,7 @@ class LinkedList:
         current_node = self.head_node
         while current_node:
             string_list += str(current_node.get_value()) + " -> "
-            current_node = current_node.get_next_node()
+            current_node = current_node.get_next_node():
         return string_list.strip(" -> ")  # Remove the trailing arrow
 
         # HashMap class for managing contact storage
