@@ -63,4 +63,21 @@ class LinkedList:
             current_node = current_node.get_next_node()
         return string_list.strip(" -> ")  # Remove the trailing arrow
 
-        
+        # HashMap class for managing contact storage
+class HashMap:
+    def __init__(self, array_size):
+        """
+        Initialize a HashMap with a fixed array size.
+        """
+        self.array_size = array_size  # Store the size of the hash map
+        self.array = [None] * array_size  # Create an array of None values for the hash map
+
+def hash_function(self, key):
+        """
+        Calculate a hash value using the sum of ASCII values of the characters in the key.
+        """
+        return sum(ord(char) for char in key) % self.array_size  # Return the hash index
+
+    
+
+
