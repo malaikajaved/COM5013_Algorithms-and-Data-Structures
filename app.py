@@ -87,6 +87,17 @@ def assign(self, key, value):
             self.array[index] = LinkedList((key, value))  # Create a new linked list for this key-value pair
         else:
             self.array[index].append((key, value))  # Append the key-value pair to the existing linked list
+            
+def retrieve(self, key):
+        """
+        Retrieve a value from the hash map using a key.
+        """
+        index = self.hash_function(key)  # Get the index for the key
+        current_list = self.array[index]  # Get the linked list at that index
+        if current_list:  # If the linked list exists
+            return current_list.search(key)  # Search for the key in the linked list
+        return None  # Return None if the linked list does not exist
+
 
 
 
