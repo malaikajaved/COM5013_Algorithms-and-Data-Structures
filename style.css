@@ -13,3 +13,30 @@ body {
     align-items: center;
     padding: 20px;
 }
+/* Headers */
+h1 {
+    color: #074682; 
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #03438b; 
+    text-align: center;
+}
+
+h2 {
+    color: #1259bb; 
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    background: #cedbe0bd; 
+    border: 2px solid #bbbfc3; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(223, 235, 241, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
