@@ -117,5 +117,24 @@ def search_all(self, term):
                     current_node = current_node.get_next_node()  # Move to the next node
         return results  # Return the list of matching contacts
 
+ def print_all(self):
+        """
+        Return a string representation of all contacts in the hash map.
+        """
+        all_contacts = []
+        for bucket in self.array:
+            if bucket:  # If the linked list exists at this index
+                current_node = bucket.get_head_node()  # Start from the head node
+                while current_node:  # Traverse the linked list
+                    contact = current_node.get_value()  # Get the contact data
+                    if contact:
+                        # Format the contact for better readability
+                        name = contact[0]
+                        details = contact[1]
+                        formatted_contact = f"Name: {name}, Phone: {details['phone_number']}, Address: {details['postal_address']}"
+                        all_contacts.append(formatted_contact)
+                    current_node = current_node.get_next_node()  # Move to the next node
+        return "<br>".join(all_contacts) if all_contacts else "No contacts available."  # Return formatted contacts or a message if empty
+
 
 
