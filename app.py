@@ -153,3 +153,55 @@ def preload_contacts():
 
 preload_contacts()
 
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        name = request.form.get("name")
+        phone = request.form.get("phone")
+        address = request.form.get("address")
+        if name and phone and address:
+            contacts.assign(name, {"phone_number": phone, "postal_address": address})
+            return render_template("results.html", message=f"Contact '{name}' added successfully!")
+        else:
+            return render_template("results.html", message="All fields are required!")
+    return render_template("index.html")
+
+
+@app.route("/search", methods=["GET"])
+def search():
+    term = request.args.get("term")
+    if term:
+        results = contacts.search_all(term)
+        if results:
+            result_message = "<br>".join([f"{res[0]}: {res[1]}" for res in results])
+            return render_template("results.html", message=f"Results:<br>{result_message}")
+        else:
+            return render_template("results.html", message="No results found.")
+    return render_template("results.html", message="Please provide a search term.")
+
+
+@app.route("/view", methods=["GET"])
+def view_all():
+    """
+    View all contacts stored in the hash map.
+    """
+    all_contacts = contacts.print_all()  # Fetch all contacts as a formatted string
+    if all_contacts.strip():  # Check if there are any contacts
+        # Wrap each contact in styled div elements
+        formatted_contacts = "".join([
+            f'<div class="contact-item">'
+            f'<p>{contact}</p>'
+            f'</div>'
+            for contact in all_contacts.split("<br>")
+        ])
+        return render_template(
+            "results.html",
+            message=f"<h2>All Contacts:</h2>{formatted_contacts}"
+        )
+    return render_template("results.html", message="No contacts available.")
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
