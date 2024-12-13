@@ -40,3 +40,50 @@ form {
     width: 100%;
     max-width: 400px;
 }
+
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #104a71;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border: 1px solid rgb(224, 238, 241);
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: #ffffff; 
+}
+
+form button {
+    background-color: #0e64a2; 
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #9dbeda; 
+}
+
+/* Links */
+a {
+    color: #4e91d3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #6d9de6;
+    text-decoration: underline;
+}
