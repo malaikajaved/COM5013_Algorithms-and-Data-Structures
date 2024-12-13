@@ -136,5 +136,20 @@ def search_all(self, term):
                     current_node = current_node.get_next_node()  # Move to the next node
         return "<br>".join(all_contacts) if all_contacts else "No contacts available."  # Return formatted contacts or a message if empty
 
+# Flask app setup
+app = Flask(__name__)
+contacts = HashMap(10)  # Create the contacts list with 10 slots
 
+
+# Preload some sample contacts
+def preload_contacts():
+    contacts.assign("Malaika", {"phone_number": "1234586124", "postal_address": "25 wendover Str"})
+    contacts.assign("Amara", {"phone_number": "347581024", "postal_address": "456 desbourough Rd"})
+    contacts.assign("Sam", {"phone_number": "3755278492", "postal_address": "71 brunel Ave"})
+    contacts.assign("Moana", {"phone_number": "4738946528", "postal_address": "15 totter Rd"})
+    print("Preloaded contacts:")
+    print(contacts.print_all())
+
+
+preload_contacts()
 
