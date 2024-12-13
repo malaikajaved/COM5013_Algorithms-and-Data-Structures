@@ -98,6 +98,24 @@ def retrieve(self, key):
             return current_list.search(key)  # Search for the key in the linked list
         return None  # Return None if the linked list does not exist
 
+def search_all(self, term):
+        """
+        Search for a term in all contacts stored in the hash map.
+        """
+        results = []
+        for bucket in self.array:
+            if bucket:  # If the linked list exists at this index
+                current_node = bucket.get_head_node()  # Start from the head node
+                while current_node:  # Traverse the linked list
+                    contact = current_node.get_value()  # Get the contact data
+                    if contact and (
+                        term in contact[0]  # Check if the term matches the name
+                        or term in contact[1]["phone_number"]  # Check if the term matches the phone number
+                        or term in contact[1]["postal_address"]  # Check if the term matches the postal address
+                    ):
+                        results.append(contact)  # Add matching contact to results
+                    current_node = current_node.get_next_node()  # Move to the next node
+        return results  # Return the list of matching contacts
 
 
 
